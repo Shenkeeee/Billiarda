@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "299882219059",
+    "project_id": "mobilalk-f3a60",
+    "storage_bucket": "mobilalk-f3a60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299882219059:android:f83207c6df65b1b095c546",
+        "android_client_info": {
+          "package_name": "com.example.mobilos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299882219059-e924fmmqmarb9447b4g4jmi2odu6q2jm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobilos",
+            "certificate_hash": "a56aef00d5b8f06824741caf4ec8c4aaf0caee9b"
+          }
+        },
+        {
+          "client_id": "299882219059-2hmn8hk4q4b8r1fjger98fura9o7fk7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIgaOXOB2iIeInoSljwJLhR5ICr24LSTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299882219059-2hmn8hk4q4b8r1fjger98fura9o7fk7q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
