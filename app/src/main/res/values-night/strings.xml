@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="new_bookingString">New booking</string>
+    <string name="delete">Delete</string>
+    <string name="modify">Modify</string>
+    <string name="date">Date</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End time</string>
+    <string name="save">Save</string>
 </resources>

@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmail);
         txtPassword = findViewById(R.id.txtEmailL);
         txtPasswordConf = findViewById(R.id.txtPasswordL);
-        btnRegisterAction = findViewById(R.id.btnNewBooking);
+        btnRegisterAction = findViewById(R.id.btnLogin);
 
         btnRegisterAction.setOnClickListener(new View.OnClickListener() {
             @Override

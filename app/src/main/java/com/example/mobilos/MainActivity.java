@@ -3,6 +3,8 @@ package com.example.mobilos;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,18 +15,26 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String S = "S";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Add this code to your Application class or main activity's onCreate method
+
         FirebaseApp.initializeApp(this);
 
+        Button btnLogin = findViewById(R.id.btnLogin);
+        Button btnRegister = findViewById(R.id.btnRegister);
+        Button btnContact = findViewById(R.id.btnContact);
+
+        animateButton(btnLogin, -200);
+        animateButton(btnRegister, 200);
+        animateButton(btnContact, -200);
     }
 
     public void quit(View view) {
         finish();
-        System.exit(0);
+        finishAffinity();
     }
 
     public void login(View view) {
@@ -45,5 +55,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ContactActivity.class);
         startActivity(intent);
 
+    }
+
+    private void animateButton(Button button, float distance) {
+        TranslateAnimation animation = new TranslateAnimation(0, distance, 0, 0);
+        animation.setDuration(500);
+        animation.setInterpolator(this, android.R.anim.accelerate_decelerate_interpolator);
+        button.startAnimation(animation);
     }
 }

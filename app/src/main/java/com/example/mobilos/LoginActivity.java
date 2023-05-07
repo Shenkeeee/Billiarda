@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +17,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText txtEmailL, txtPasswordL;
     private Button btnLogin;
+
+
 
     private FirebaseAuth mAuth;
 
@@ -27,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
         txtEmailL = findViewById(R.id.txtEmailL);
         txtPasswordL = findViewById(R.id.txtPasswordL);
-        btnLogin = findViewById(R.id.btnNewBooking);
+        btnLogin = findViewById(R.id.btnLogin);
 
         // Retrieve email and password values from extras -- for autofiling
         String email = getIntent().getStringExtra("email");
@@ -60,11 +64,17 @@ public class LoginActivity extends AppCompatActivity {
                         // Login success
                         Toast.makeText(LoginActivity.this, "Login successful.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, BookingActivity.class);
+                        intent.putExtra("email", email); // Pass the email as an extra
                         startActivity(intent);
                         finish();
                     } else {
                         // Login failed
                         Toast.makeText(LoginActivity.this, "Login failed. Please check your credentials.", Toast.LENGTH_SHORT).show();
+
+                        // Shake animation on the button
+                        Button loginButton = findViewById(R.id.btnLogin);
+                        Animation shakeAnimation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.shake_animation);
+                        loginButton.startAnimation(shakeAnimation);
                     }
                 })
                 .addOnFailureListener(this, e -> {
